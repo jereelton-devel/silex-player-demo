@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/api1/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/api1/vendor/silex/silex" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/api1/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/api1/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/api1/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/api1/vendor/app/src" />
+      <path value="$PROJECT_DIR$/api1/vendor/composer" />
+      <path value="$PROJECT_DIR$/api1/vendor/paragonie/random_compat" />
+    </include_path>
+  </component>
+</project>
