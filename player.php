@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sliex Player</title>
+	<title>Silex Player</title>
 
     <link rel="stylesheet" href="./css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
@@ -20,7 +20,7 @@
     <div id="subview"></div>
 
     <!--Resultados-->
-    <table class="table text-center" id="tb_sliex_player">
+    <table class="table text-center" id="tb_silex_player">
         <thead>
             <th class="text-center">ID</th>
             <th class="text-center">PLAYER 1</th>
@@ -28,7 +28,7 @@
             <th class="text-center">PLAYER 2</th>
             <th class="text-center">WINNER</th>
         </thead>
-        <tbody id="tbody_sliex_player">
+        <tbody id="tbody_silex_player">
             <!--Insere aqui os resultados-->
         </tbody>
     </table>

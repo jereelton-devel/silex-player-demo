@@ -68,9 +68,9 @@ $app->get('/controll/player-stop', function(){
 
     if(SilexPlayerStop::stopPlayerNow() === false) {
 
-        echo 'ERRO: SLIM PLAYER NÃO CONSEGUIU PARAR O PLAYER';
+        echo 'ERRO: SILEX PLAYER NÃO CONSEGUIU PARAR O PLAYER';
 
-        //file_put_contents('log', date("F j, Y, g:i a")." ERRO: SLIM PLAYER NÃO CONSEGUIU PARAR O PLAYER\r\n", FILE_APPEND);
+        //file_put_contents('log', date("F j, Y, g:i a")." ERRO: SILEX PLAYER NÃO CONSEGUIU PARAR O PLAYER\r\n", FILE_APPEND);
 
     } else {
 
@@ -117,38 +117,35 @@ $app->get('/controll/player-reset', function(){
     exit;
 });
 
-$app->get('/info/{action}', function($action){
+$app->get('/info/player-result', function(){
 
-    if($action == 'player-result') {
+    $stmt = new SilexPlayerQuery();
 
-        $stmt = new SilexPlayerQuery();
-
-        //Ultimo id gerado para controle geral do player
-        $stmt->queryGetLastId();
-        $i = $stmt->queryResult();
-        if(count($i) == 0) {
-            echo "Erro: API3 NÃO CONSEGUIU OBTER O ULTIMO ID GERADO PARA MOSTRAR O RESULTADO";
-            touch('player_stop.lock');
-            exit;
-        }
-
-        //file_put_contents('log', date("F j, Y, g:i a")." id: ".$i[0]['id']."\r\n", FILE_APPEND);
-
-        $stmt->queryWinnerSelect($i[0]['id']);
-        $winner = $stmt->queryResult();
-
-        //file_put_contents('log', date("F j, Y, g:i a")." select: ".json_encode($winner)."\r\n", FILE_APPEND);
-
-        echo json_encode([
-            'id' => $winner[0]['id'],
-            'api3_val' => $winner[0]['api3_val'],
-            'api1_val' => $winner[0]['api1_val'],
-            'api2_val' => $winner[0]['api2_val'],
-            'winner' => $winner[0]['winner']
-        ]);
-
+    //Ultimo id gerado para controle geral do player
+    $stmt->queryGetLastId();
+    $i = $stmt->queryResult();
+    if(count($i) == 0) {
+        echo "Erro: API3 NÃO CONSEGUIU OBTER O ULTIMO ID GERADO PARA MOSTRAR O RESULTADO";
+        touch('player_stop.lock');
         exit;
     }
+
+    //file_put_contents('log', date("F j, Y, g:i a")." id: ".$i[0]['id']."\r\n", FILE_APPEND);
+
+    $stmt->queryWinnerSelect($i[0]['id']);
+    $winner = $stmt->queryResult();
+
+    //file_put_contents('log', date("F j, Y, g:i a")." select: ".json_encode($winner)."\r\n", FILE_APPEND);
+
+    echo json_encode([
+        'id' => $winner[0]['id'],
+        'api3_val' => $winner[0]['api3_val'],
+        'api1_val' => $winner[0]['api1_val'],
+        'api2_val' => $winner[0]['api2_val'],
+        'winner' => $winner[0]['winner']
+    ]);
+
+    exit;
 });
 
 $app->get('/info/player-status', function(){

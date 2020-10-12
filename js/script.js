@@ -3,13 +3,13 @@ $(document).ready(function(){
 
     var controlPlayer = null;
 
-    $("#tb_sliex_player").hide();
+    $("#tb_silex_player").hide();
 
     function getPlayerResult() {
 
         $.ajax({
             type: "GET",
-            url: "http://localhost/webdev/testes/sliex-player-demo/api3/info/player-status",
+            url: "http://localhost/webdev/testes/silex-player-demo/api3/info/player-status",
             data: "action=player-status",
             dataType: "text",
             async: false,
@@ -24,7 +24,7 @@ $(document).ready(function(){
 
                     $.ajax({
                         type: "GET",
-                        url: "http://localhost/webdev/testes/sliex-player-demo/api3/info/player-result",
+                        url: "http://localhost/webdev/testes/silex-player-demo/api3/info/player-result",
                         data: "action=player-result",
                         dataType: "text",
                         success: function(resp) {
@@ -42,7 +42,7 @@ $(document).ready(function(){
                             winner1 = (resp.winner == 'api1') ? 'winner' : '';
                             winner2 = (resp.winner == 'api2') ? 'winner' : '';
 
-                            $("#tbody_sliex_player").append("" +
+                            $("#tbody_silex_player").append("" +
                                 "<tr>" +
                                 "<td>"+resp.id+"</td>" +
                                 "<td class='"+winner1+"'>"+resp.api1_val+"</td>" +
@@ -62,14 +62,14 @@ $(document).ready(function(){
 
     $("#bt-start-player").on('click', function() {
 
-        $("#tb_sliex_player").removeClass('hide');
-        $("#tb_sliex_player").show();
+        $("#tb_silex_player").removeClass('hide');
+        $("#tb_silex_player").show();
 
-        $("#subview").html("WELCOME TO SLIEX PLAYER");
+        $("#subview").html("WELCOME TO SILEX PLAYER");
 
         $.ajax({
             type: "GET",
-            url: "http://localhost/webdev/testes/sliex-player-demo/api3/controll/player-start",
+            url: "http://localhost/webdev/testes/silex-player-demo/api3/controll/player-start",
             data: "action=player-start",
             dataType: "text",
             success: function(resp) {
@@ -94,7 +94,7 @@ $(document).ready(function(){
         if(confirm("Deseja cancelar o jogo ?")) {
             $.ajax({
                 type: "GET",
-                url: "http://localhost/webdev/testes/sliex-player-demo/api3/controll/player-stop",
+                url: "http://localhost/webdev/testes/silex-player-demo/api3/controll/player-stop",
                 data: "action=player-stop",
                 dataType: "text",
                 success: function(resp) {
@@ -118,14 +118,14 @@ $(document).ready(function(){
 
             $.ajax({
                 type: "GET",
-                url: "http://localhost/webdev/testes/sliex-player-demo/api3/controll/player-reset",
+                url: "http://localhost/webdev/testes/silex-player-demo/api3/controll/player-reset",
                 data: "action=player-reset",
                 dataType: "text",
                 success: function(resp) {
 
                     $.ajax({
                         type: "GET",
-                        url: "http://localhost/webdev/testes/sliex-player-demo/api2/controll/player-reset",
+                        url: "http://localhost/webdev/testes/silex-player-demo/api2/controll/player-reset",
                         data: "action=player-reset",
                         dataType: "text",
                         async: false,
@@ -133,7 +133,7 @@ $(document).ready(function(){
 
                             $.ajax({
                                 type: "GET",
-                                url: "http://localhost/webdev/testes/sliex-player-demo/api1/controll/player-reset",
+                                url: "http://localhost/webdev/testes/silex-player-demo/api1/controll/player-reset",
                                 data: "action=player-reset",
                                 dataType: "text",
                                 async: false,
@@ -144,8 +144,8 @@ $(document).ready(function(){
                     });
 
                     $("#subview").html(resp);
-                    $("#tbody_sliex_player").html("");
-                    $("#tb_sliex_player").hide();
+                    $("#tbody_silex_player").html("");
+                    $("#tb_silex_player").hide();
                     $("#bt-start-player").prop('disabled', false);
                     $("#bt-stop-player").prop('disabled', true);
                     $("#bt-reset-player").prop('disabled', true);

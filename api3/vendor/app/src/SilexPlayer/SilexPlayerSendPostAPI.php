@@ -7,7 +7,7 @@ class SilexPlayerSendPostAPI
     public function postInformation($target_api, $player_id)
     {
         #curl
-        $url  = "http://localhost/webdev/testes/sliex-player-demo/{$target_api}/player_running/{$player_id}";
+        $url  = "http://localhost/webdev/testes/silex-player-demo/{$target_api}/player_running/{$player_id}";
         $init = curl_init($url);
 
         //file_put_contents('log', date("F j, Y, g:i a")." ".$url."\r\n", FILE_APPEND);

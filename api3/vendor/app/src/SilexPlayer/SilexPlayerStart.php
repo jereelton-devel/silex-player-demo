@@ -8,13 +8,13 @@ class SilexPlayerStart
     {
         if(file_exists('player_stop.lock')) {
             if(unlink('player_stop.lock')) {
-                return "BEM VINDO AO SLIM PLAYER";
+                return "BEM VINDO AO SILEX PLAYER";
             } else {
                 touch('player_stop.lock');
-                return "ERRO: SLIM PLAYER NÃO PODE INICIAR";
+                return "ERRO: SILEX PLAYER NÃO PODE INICIAR";
             }
         } else {
-            return "BEM VINDO AO SLIM PLAYER";
+            return "BEM VINDO AO SILEX PLAYER";
         }
 
     }

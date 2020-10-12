@@ -10,7 +10,7 @@ class SilexPlayerQuery
     private $tbname;
 
     public function queryPlayerReset() {
-        $this->query = "TRUNCATE TABLE tb_slim_player;";
+        $this->query = "TRUNCATE TABLE tb_silex_player;";
     }
 
     public function queryUpdatePlayerStatus($id, $status)
@@ -47,7 +47,7 @@ class SilexPlayerQuery
         $this->query = "SELECT
                             id
                         FROM
-                            tb_slim_player
+                            $this->tbname
                         ORDER BY
                             id DESC
                         LIMIT 1;";
